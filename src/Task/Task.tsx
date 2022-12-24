@@ -3,12 +3,13 @@ import { TasksPreviewList } from "../TasksPreviewList/TasksPreviewList";
 import { Tabs, TabList, TabPanels, Tab } from "@chakra-ui/react";
 import { TaskDetails } from "../TaskDetails/TaskDetails";
 import { Status } from "../StatusBadge/StatusBadge";
-import { UserProps } from "../User/UserProps";
+import { User } from "../User/User";
+import { TaskHeader } from "../TaskHeader/TaskHeader";
 
 export type Task = {
   id: string;
   title: string;
-  assignee: UserProps | undefined;
+  assignee: User | undefined;
   createdAt: Date;
   closedAt?: Date;
   status: Status;
@@ -28,16 +29,20 @@ export const Task = ({
 }: Task) => {
   return (
     <>
-      <TaskDetails assignee={assignee} status={status} createdAt={createdAt} />
+      <TaskHeader createdAt={createdAt} assignee={assignee} title={title} />
+      <TaskDetails
+        description={description}
+        assignee={assignee}
+        status={status}
+        createdAt={createdAt}
+      />
       {relatedTickets && (
         <Tabs size="md" variant="enclosed">
           <TabList>
             <Tab>Related Tasks</Tab>
           </TabList>
           <TabPanels>
-            <TabPanels>
-              <TasksPreviewList relatedTickets={relatedTickets} />
-            </TabPanels>
+            <TasksPreviewList relatedTickets={relatedTickets} />
           </TabPanels>
         </Tabs>
       )}

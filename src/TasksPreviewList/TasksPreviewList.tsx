@@ -10,14 +10,14 @@ export const TasksPreviewList = ({ relatedTickets }: TasksPreviewList) => {
   return (
     <>
       {relatedTickets.map(
-        ({ id, title, assignee, createdAt, status }: Task, i: number) => (
+        ({ id, title, assignee, createdAt, status }: Task) => (
           <TaskPreviewItem
             id={id}
             title={title}
             assignee={assignee}
             status={status}
             createdAt={createdAt}
-            key={i}
+            key={`task-${id}`}
           />
         )
       )}

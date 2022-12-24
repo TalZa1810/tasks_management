@@ -4,12 +4,12 @@ import "./styles.css";
 import { Status } from "../StatusBadge/StatusBadge";
 import { StatusBadge } from "../StatusBadge/StatusBadge";
 import { BsChevronRight } from "react-icons/bs";
-import { User, UserProps } from "../User/UserProps";
+import { User } from "../User/User";
 
 export type TaskPreviewProps = {
   id: string;
   title: string;
-  assignee: UserProps | undefined;
+  assignee: User | undefined;
   createdAt: Date;
   status: Status;
 };

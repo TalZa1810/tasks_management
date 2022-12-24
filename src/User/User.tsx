@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, Avatar } from "@chakra-ui/react";
 
-export type UserProps = {
+export type User = {
   name: string;
   id: string;
   avatar?: string;
 };
 
-export const User = ({ avatar, name }: UserProps) => {
+export const User = ({ avatar, name }: User) => {
   return (
     <>
       <Avatar size="xl" name="Dan Abrahmov" src={avatar} />
