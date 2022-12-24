@@ -28,7 +28,7 @@ export const Task = ({
 }: Task) => {
   return (
     <>
-      <TaskDetails status={status} createdAt={createdAt} />
+      <TaskDetails assignee={assignee} status={status} createdAt={createdAt} />
       {relatedTickets && (
         <Tabs size="md" variant="enclosed">
           <TabList>
