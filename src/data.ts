@@ -1,25 +1,32 @@
+import type { Task } from "./Task/Task";
 const avatar = "https://bit.ly/dan-abramov";
 
-export const taskData: any = {
-  id: "1",
+const talInfo = {
+  avatar,
+  name: "Tal",
+  id: "51795ba8-8382-11ed-a1eb-0242ac120002",
+};
+
+export const taskData: Task = {
+  id: "51795554-8382-11ed-a1eb-0242ac120002",
   title: "tal title",
-  assignee: { avatar, name: "tal", id: "1" },
+  assignee: talInfo,
   createdAt: new Date(1670226958394),
   status: "open",
   description: "description task",
   relatedTickets: [
     {
-      id: "2",
+      id: "517957f2-8382-11ed-a1eb-0242ac120002",
       title: "First title",
-      assignee: { avatar, name: "Tal", id: "1" },
+      assignee: talInfo,
       createdAt: new Date(1670226958394),
       status: "open",
       description: "description task2",
     },
     {
-      id: "2",
+      id: "51795928-8382-11ed-a1eb-0242ac120002",
       title: "Second title",
-      assignee: { avatar, name: "Koby", id: "1" },
+      assignee: undefined,
       createdAt: new Date(1670226958394),
       status: "in_progress",
       description: "description task2",

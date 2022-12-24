@@ -3,17 +3,12 @@ import { TasksPreviewList } from "../TasksPreviewList/TasksPreviewList";
 import { Tabs, TabList, TabPanels, Tab } from "@chakra-ui/react";
 import { TaskDetails } from "../TaskDetails/TaskDetails";
 import { Status } from "../StatusBadge/StatusBadge";
-
-export type User = {
-  name: string;
-  id: string;
-  avatar?: React.ReactNode;
-};
+import { UserProps } from "../User/UserProps";
 
 export type Task = {
   id: string;
   title: string;
-  assignee: User | undefined;
+  assignee: UserProps | undefined;
   createdAt: Date;
   closedAt?: Date;
   status: Status;

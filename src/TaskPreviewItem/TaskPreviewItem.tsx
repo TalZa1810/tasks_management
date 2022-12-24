@@ -1,19 +1,15 @@
 import React from "react";
-import { Box, Button, Image, Stack, Text } from "@chakra-ui/react";
-
+import { Box, IconButton, Stack, Text } from "@chakra-ui/react";
+import "./styles.css";
 import { Status } from "../StatusBadge/StatusBadge";
 import { StatusBadge } from "../StatusBadge/StatusBadge";
-
-export type User = {
-  name: string;
-  id: string;
-  avatar?: any;
-};
+import { BsChevronRight } from "react-icons/bs";
+import { User, UserProps } from "../User/UserProps";
 
 export type TaskPreviewProps = {
   id: string;
   title: string;
-  assignee?: User | undefined;
+  assignee: UserProps | undefined;
   createdAt: Date;
   status: Status;
 };
@@ -39,31 +35,21 @@ export const TaskPreviewItem = ({
           alignItems="center"
         >
           <Stack direction="column" alignItems="center">
-            {assignee?.avatar && (
-              <Image
-                borderRadius="full"
-                boxSize="80px"
-                src={assignee?.avatar}
-                alt="Dan Abramov"
-              />
-            )}
-            {assignee?.name && (
-              <Text
-                as="b"
-                fontSize={{ base: "sm" }}
-                textAlign={"left"}
-                maxW={"4xl"}
-              >
-                {assignee?.name}
-              </Text>
+            {assignee ? (
+              <User {...assignee} />
+            ) : (
+              <div className="emptyAvatar" />
             )}
           </Stack>
           <Stack spacing="24px" direction="row" alignItems="center">
             <Text>{createdAt.toDateString()}</Text>
             <StatusBadge status={status} />
-            <Button variant="outline" colorScheme="green">
-              View task
-            </Button>
+            <IconButton
+              variant="ghost"
+              colorScheme="teal"
+              aria-label="display task"
+              icon={<BsChevronRight />}
+            />
           </Stack>
         </Stack>
       </Stack>
