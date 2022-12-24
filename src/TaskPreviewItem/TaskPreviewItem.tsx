@@ -22,7 +22,7 @@ export const TaskPreviewItem = ({
   status,
 }: TaskPreviewProps) => {
   return (
-    <Box w="600px">
+    <Box w="700px">
       <Stack p="4" boxShadow="lg" m="4" borderRadius="sm">
         <Stack direction="row" alignItems="center">
           <Text fontSize="2xl" fontWeight="semibold">
@@ -42,6 +42,7 @@ export const TaskPreviewItem = ({
             )}
           </Stack>
           <Stack spacing="24px" direction="row" alignItems="center">
+            <Text as="b">Creation date:</Text>
             <Text>{createdAt.toDateString()}</Text>
             <StatusBadge status={status} />
             <IconButton
