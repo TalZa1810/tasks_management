@@ -36,3 +36,5 @@ export const taskData: Task = {
 };
 
 export const tasks: Task[] = [taskData];
+
+export const getTaskData = (id: string) => tasks.find((task) => task.id === id);

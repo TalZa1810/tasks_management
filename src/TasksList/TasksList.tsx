@@ -1,5 +1,6 @@
 import React from "react";
 import { TasksPreviewList } from "../TasksPreviewList/TasksPreviewList";
+import { NewTaskForm } from "../NewTaskForm/NewTaskForm";
 import {
   Heading,
   Button,
@@ -31,15 +32,12 @@ export const TasksList = ({ tasks }: TasksList) => {
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>text</ModalBody>
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button variant="ghost">Secondary Action</Button>
-            </ModalFooter>
+            <ModalHeader>
+              <ModalCloseButton />
+            </ModalHeader>
+            <ModalBody>
+              <NewTaskForm />
+            </ModalBody>
           </ModalContent>
         </Modal>
       </HStack>
