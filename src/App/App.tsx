@@ -8,7 +8,10 @@ import {
 } from "@chakra-ui/react";
 
 import { Task } from "../Task/Task";
-import { taskData } from "../data";
+import { taskData, tasks } from "../data";
+
+import { TasksPreviewList } from "../TasksPreviewList/TasksPreviewList";
+import { TasksList } from "../TasksList/TasksList";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -23,14 +26,15 @@ export const App = () => (
     >
       <GridItem pl="6" area="header">
         <Heading as="h1" size="3xl">
-          Task Management
+          Task Manager
         </Heading>
       </GridItem>
       <GridItem pl="2" area="nav">
         Nav
       </GridItem>
       <GridItem pl="2" area="main">
-        <Task {...taskData} />
+        {/*<Task {...taskData} />*/}
+        <TasksList tasks={tasks} />
       </GridItem>
       <GridItem pl="2" area={"footer"}>
         Footer

@@ -34,3 +34,5 @@ export const taskData: Task = {
     },
   ],
 };
+
+export const tasks: Task[] = [taskData];
