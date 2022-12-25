@@ -42,7 +42,7 @@ export const Task = ({
             <Tab>Related Tasks</Tab>
           </TabList>
           <TabPanels>
-            <TasksPreviewList relatedTickets={relatedTickets} />
+            <TasksPreviewList tasks={relatedTickets} />
           </TabPanels>
         </Tabs>
       )}

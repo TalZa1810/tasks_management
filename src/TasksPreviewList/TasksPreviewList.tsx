@@ -3,24 +3,22 @@ import { TaskPreviewItem } from "../TaskPreviewItem/TaskPreviewItem";
 import { Task } from "../Task/Task";
 
 export type TasksPreviewList = {
-  relatedTickets: Task[];
+  tasks: Task[];
 };
 
-export const TasksPreviewList = ({ relatedTickets }: TasksPreviewList) => {
+export const TasksPreviewList = ({ tasks }: TasksPreviewList) => {
   return (
     <>
-      {relatedTickets.map(
-        ({ id, title, assignee, createdAt, status }: Task) => (
-          <TaskPreviewItem
-            id={id}
-            title={title}
-            assignee={assignee}
-            status={status}
-            createdAt={createdAt}
-            key={`task-${id}`}
-          />
-        )
-      )}
+      {tasks.map(({ id, title, assignee, createdAt, status }: Task) => (
+        <TaskPreviewItem
+          id={id}
+          title={title}
+          assignee={assignee}
+          status={status}
+          createdAt={createdAt}
+          key={`task-${id}`}
+        />
+      ))}
     </>
   );
 };
